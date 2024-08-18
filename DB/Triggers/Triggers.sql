@@ -78,20 +78,36 @@ AS
 
 -- ************************************************ Mokhter *****************************************
 CREATE TRIGGER trg_CalculateSalaryOnDeparture
-AFTER UPDATE ON Attendance
+ON Attendance
+AFTER UPDATE
+AS
 BEGIN
-    DECLARE @work_hours DECIMAL(10, 2);
-    DECLARE @calculated_salary DECIMAL(10, 2);
+    IF UPDATE(DepartureTime)
+    BEGIN
+        DECLARE @work_hours DECIMAL(10, 2);
+        DECLARE @calculated_salary DECIMAL(10, 2);
+        DECLARE @ArrivalTime DATETIME;
+        DECLARE @DepartureTime DATETIME;
+        DECLARE @ExpenseMoney DECIMAL(10, 2);
+        DECLARE @NationalID VARCHAR(20);
+        DECLARE @FixedSalary DECIMAL(10, 2);
 
-    -- Calculate the number of hours worked
-    SET @work_hours = TIMESTAMPDIFF(HOUR, NEW.ArrivalTime, NEW.DepartureTime);
+        -- calc worked hours 
+        SET @work_hours = DATEDIFF(HOUR, @ArrivalTime, @DepartureTime);
 
-    -- Calculate the salary: (work_hours * hourly rate) - expenses
-    SET @calculated_salary = (@work_hours * (SELECT FixedSalary FROM Employee WHERE NationalID = NEW.NationalID) / 10) - NEW.ExpenseMoney;
+        -- get Fixed salary from emp table 
+        SELECT @FixedSalary = FixedSalary 
+        FROM Employee 
+        WHERE NationalID = @NationalID;
 
-    -- Update the employee's salary in the Employee table
-    UPDATE Employee
-    SET FixedSalary = calculated_salary
-    WHERE NationalID = NEW.NationalID;
-END
+        -- calc DPM = (WH *(FS/10))-EM
+        SET @calculated_salary = (@work_hours * (@FixedSalary / 10)) - @ExpenseMoney;
+
+        -- update daily pocket money
+        UPDATE Attendance
+        SET DailyPocketMoney = @calculated_salary
+        WHERE NationalID = @NationalID;
+    END;
+END;
+
 -- **************************************************************************************************
