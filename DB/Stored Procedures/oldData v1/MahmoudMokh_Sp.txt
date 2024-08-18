@@ -1,0 +1,32 @@
+
+CREATE PROCEDURE AddCustomer(IN C_Code INT, IN C_Name VARCHAR(100), IN C_Phone VARCHAR(15))
+BEGIN
+    INSERT INTO Customer (Code, Name, Phone)
+    VALUES (C_Code, C_Name, C_Phone);
+END
+
+================================================
+CREATE PROCEDURE AddEmployeeServesCustomer(
+    IN p_NationalID VARCHAR(20),
+    IN p_CustomerCode INT,
+    IN p_ServiceID INT,
+    IN P_ServDate Date
+)
+BEGIN
+
+    INSERT INTO Serve (NationalID, Code, ServiceID, ServDate)
+    VALUES (p_NationalID, p_CustomerCode, p_ServiceID, P_ServDate);
+
+END 
+
+=================================================
+CREATE PROCEDURE CalculateTotalCost(
+    IN p_CustomerCode INT,
+    OUT p_TotalCost DECIMAL(10, 2)
+)
+BEGIN
+    SELECT SUM(s.Price) INTO p_TotalCost
+    FROM Service s
+    JOIN Serve sr ON s.ServiceID = sr.ServiceID
+    WHERE sr.Code = p_CustomerCode;
+END

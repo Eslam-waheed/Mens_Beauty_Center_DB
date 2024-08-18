@@ -1,0 +1,23 @@
+CREATE TRIGGER CalculateSalaryOnDeparture
+
+AFTER UPDATE ON Attendance
+
+FOR EACH ROW
+
+BEGIN
+
+    DECLARE work_hours DECIMAL(10, 2);
+    DECLARE calculated_salary DECIMAL(10, 2);
+
+    -- Calculate the number of hours worked
+    SET work_hours = TIMESTAMPDIFF(HOUR, NEW.ArrivalTime, NEW.DepartureTime);
+
+    -- Calculate the salary: (work_hours * hourly rate) - expenses
+    SET calculated_salary = (work_hours * (SELECT FixedSalary FROM Employee WHERE NationalID = NEW.NationalID) / 10) - NEW.ExpenseMoney;
+
+    -- Update the employee's salary in the Employee table
+    UPDATE Employee
+    SET FixedSalary = calculated_salary
+    WHERE NationalID = NEW.NationalID;
+
+END

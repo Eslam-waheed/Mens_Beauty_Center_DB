@@ -1,0 +1,16 @@
+CREATE VIEW AttendanceWithEmployeeName AS
+
+SELECT 
+
+    a.AttendanceID,
+    e.FirstName,
+    e.LastName,
+    a.ArrivalTime,
+    a.DepartureTime,
+    a.ExpenseMoney,
+    a.DailyPocketMoney
+
+FROM 
+    Attendance a
+JOIN 
+    Employee e ON a.NationalID = e.NationalID;

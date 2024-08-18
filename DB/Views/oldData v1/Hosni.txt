@@ -1,0 +1,10 @@
+/* Views */
+create view Vw_CoustomerVipDetails
+as 
+select 
+C.Name As 'Customer Name', C.PhoneNumber As 'Customer Phone', 
+P.Name As 'Package Name', P.Description As 'Package Description', P.TotalAmount As 'Package Cost', 
+PC.Deposit As 'Customer Deposit', PC.TakeDate 
+from Customer C , Package P , PackageCustomer PC 
+where PC.CustomerId = C.Code 
+and PC.PackageId = P.ID

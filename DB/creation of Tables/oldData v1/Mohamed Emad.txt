@@ -1,0 +1,20 @@
+<<<<<<< HEAD
+create table Employee 
+(
+  FirstName nvarchar(50) not null,
+  LastName nvarchar(50) not null,
+  NationalID char(14) check (len(NationalID)=14) primary key,
+  PhoneNumber VARCHAR(11) CHECK (PhoneNumber LIKE '01[0125][0-9]%') not null,
+  FixedSalary decimal(9, 2) not null,
+  [Type] bit
+=======
+create table Employee 
+(
+  FirstName nvarchar(50),
+  LastName nvarchar(50),
+  NationalID char(14) check (len(NationalID)=14) primary key,
+   PhoneNumber VARCHAR(11) CHECK (PhoneNumber LIKE '01[0125][0-9]%'),
+  FixedSalary decimal(18, 2),
+  [Type] nvarchar(20) 
+>>>>>>> 957e31aee3073a053c801701e549cdeca1b4fcc7
+);

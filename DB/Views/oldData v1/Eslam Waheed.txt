@@ -1,0 +1,8 @@
+create view AllEmployees
+as
+	select NationalID, FirstName, LastName, PhoneNumber, FixedSalary, 
+	case 
+		when [Type] = 1 then 'Cashier'
+		else 'Barber'
+	end
+	from Employee;
