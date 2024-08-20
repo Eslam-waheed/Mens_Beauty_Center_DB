@@ -9,3 +9,14 @@ C:\Users\moham\OneDrive\Desktop\iti\C# Project\Mens_Beauty_Center_DB\Project\Men
 C:\Users\moham\OneDrive\Desktop\iti\C# Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.csproj.CoreCompileInputs.cache
 C:\Users\moham\OneDrive\Desktop\iti\C# Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.exe
 C:\Users\moham\OneDrive\Desktop\iti\C# Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.pdb
+E:\C#_Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\Mens_Beauty_Center.exe.config
+E:\C#_Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\Mens_Beauty_Center.exe
+E:\C#_Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\Mens_Beauty_Center.pdb
+E:\C#_Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.csproj.AssemblyReference.cache
+E:\C#_Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.Categories.resources
+E:\C#_Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.EmployeeShow.resources
+E:\C#_Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.Properties.Resources.resources
+E:\C#_Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.csproj.GenerateResource.cache
+E:\C#_Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.csproj.CoreCompileInputs.cache
+E:\C#_Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.exe
+E:\C#_Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.pdb

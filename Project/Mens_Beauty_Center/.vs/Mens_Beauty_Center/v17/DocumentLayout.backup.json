@@ -1,0 +1,91 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\C#_Project\\Mens_Beauty_Center_DB\\Project\\Mens_Beauty_Center\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|E:\\C#_Project\\Mens_Beauty_Center_DB\\Project\\Mens_Beauty_Center\\mens_beauty_center\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|solutionrelative:mens_beauty_center\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|e:\\c#_project\\mens_beauty_center_db\\project\\mens_beauty_center\\mens_beauty_center\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|solutionrelative:mens_beauty_center\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|e:\\c#_project\\mens_beauty_center_db\\project\\mens_beauty_center\\mens_beauty_center\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|solutionrelative:mens_beauty_center\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|e:\\c#_project\\mens_beauty_center_db\\project\\mens_beauty_center\\mens_beauty_center\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|solutionrelative:mens_beauty_center\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginForm.Designer.cs",
+              "DocumentMoniker": "E:\\C#_Project\\Mens_Beauty_Center_DB\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\LoginForm.Designer.cs",
+              "RelativeDocumentMoniker": "Mens_Beauty_Center\\LoginForm.Designer.cs",
+              "ToolTip": "E:\\C#_Project\\Mens_Beauty_Center_DB\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\LoginForm.Designer.cs*",
+              "RelativeToolTip": "Mens_Beauty_Center\\LoginForm.Designer.cs*",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAowIAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T00:06:23.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "E:\\C#_Project\\Mens_Beauty_Center_DB\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\LoginForm.cs",
+              "RelativeDocumentMoniker": "Mens_Beauty_Center\\LoginForm.cs",
+              "ToolTip": "E:\\C#_Project\\Mens_Beauty_Center_DB\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\LoginForm.cs*",
+              "RelativeToolTip": "Mens_Beauty_Center\\LoginForm.cs*",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T00:06:19.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginForm.cs [Design]",
+              "DocumentMoniker": "E:\\C#_Project\\Mens_Beauty_Center_DB\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\LoginForm.cs",
+              "RelativeDocumentMoniker": "Mens_Beauty_Center\\LoginForm.cs",
+              "ToolTip": "E:\\C#_Project\\Mens_Beauty_Center_DB\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\LoginForm.cs [Design]*",
+              "RelativeToolTip": "Mens_Beauty_Center\\LoginForm.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T00:06:16.343Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\C#_Project\\Mens_Beauty_Center_DB\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Program.cs",
+              "RelativeDocumentMoniker": "Mens_Beauty_Center\\Program.cs",
+              "ToolTip": "E:\\C#_Project\\Mens_Beauty_Center_DB\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Program.cs*",
+              "RelativeToolTip": "Mens_Beauty_Center\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T22:31:27.92Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
