@@ -410,6 +410,7 @@
       <Parameter Name="LastName" Mode="In" Type="String" />
       <Parameter Name="NationalID" Mode="In" Type="String" />
       <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+      <Parameter Name="FixedSalary" Mode="In" Type="Decimal" />
       <Parameter Name="Type" Mode="In" Type="Boolean" />
     </FunctionImport>
     <FunctionImport Name="SP_UpdateEmployeeSalary">

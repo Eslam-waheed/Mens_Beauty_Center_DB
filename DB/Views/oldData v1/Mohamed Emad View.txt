@@ -1,3 +1,0 @@
-CREATE VIEW AllCustomers AS
-SELECT Code, Name, PhoneNumber
-FROM Customer

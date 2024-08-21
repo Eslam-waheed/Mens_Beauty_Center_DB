@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Mens_Beauty_Center_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Mens_Beauty_Center_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Account">
           <Key>
             <PropertyRef Name="UserName" />
@@ -75,13 +75,6 @@
           <Property Name="Deposit" Type="decimal" Precision="9" Scale="2" Nullable="false" />
           <Property Name="TakeDate" Type="date" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'Mens_Beauty_Center_DB.dbo.PackageHistory' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="PackageHistory">
-          <Property Name="PackageID" Type="int" />
-          <Property Name="OldTotalAmount" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="ChangeDate" Type="date" />
-        </EntityType>-->
         <EntityType Name="serve">
           <Key>
             <PropertyRef Name="NationalID" />
@@ -101,13 +94,6 @@ warning 6013: The table/view 'Mens_Beauty_Center_DB.dbo.PackageHistory' does not
           <Property Name="ServiceName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Price" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'Mens_Beauty_Center_DB.dbo.ServiceHistory' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ServiceHistory">
-          <Property Name="ServiceID" Type="int" />
-          <Property Name="OldPrice" Type="int" />
-          <Property Name="ChangeDate" Type="date" />
-        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Mens_Beauty_Center_DB.dbo.V_AllCustomers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="V_AllCustomers">
@@ -371,6 +357,7 @@ warning 6002: The table/view 'Mens_Beauty_Center_DB.dbo.V_Service' does not have
           <Parameter Name="LastName" Type="nvarchar" Mode="In" />
           <Parameter Name="NationalID" Type="char" Mode="In" />
           <Parameter Name="PhoneNumber" Type="varchar" Mode="In" />
+          <Parameter Name="FixedSalary" Type="decimal" Mode="In" />
           <Parameter Name="Type" Type="bit" Mode="In" />
         </Function>
         <Function Name="SP_UpdateEmployeeSalary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -494,8 +481,7 @@ warning 6002: The table/view 'Mens_Beauty_Center_DB.dbo.V_Service' does not have
             <End Role="Evaluation" EntitySet="Evaluation" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Mens_Beauty_Center_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -875,13 +861,13 @@ warning 6002: The table/view 'Mens_Beauty_Center_DB.dbo.V_Service' does not have
             <Parameter Name="EmployeeID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_DeleteManagerAccount">
-            <Parameter Name="UserName" Mode="In" Type="String" />
+          <Parameter Name="UserName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_DeletePackage" ReturnType="Collection(String)">
-            <Parameter Name="PackageId" Mode="In" Type="Int32" />
+          <Parameter Name="PackageId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SP_DeleteService">
-            <Parameter Name="ServiceID" Mode="In" Type="Int32" />
+          <Parameter Name="ServiceID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SP_EmployeeReport" ReturnType="Collection(Mens_Beauty_Center_DBModel.SP_EmployeeReport_Result)">
             <Parameter Name="EmployeeID" Mode="In" Type="Int32" />
@@ -889,16 +875,16 @@ warning 6002: The table/view 'Mens_Beauty_Center_DB.dbo.V_Service' does not have
             <Parameter Name="EndDate" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="SP_GetCustomerByPhoneNumber" ReturnType="Collection(Mens_Beauty_Center_DBModel.SP_GetCustomerByPhoneNumber_Result)">
-            <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+          <Parameter Name="PhoneNumber" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_GetCustomerPackagesByPhoneNumber" ReturnType="Collection(Mens_Beauty_Center_DBModel.SP_GetCustomerPackagesByPhoneNumber_Result)">
-            <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+          <Parameter Name="PhoneNumber" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_GetCustomerServicesByPhoneNumber" ReturnType="Collection(Mens_Beauty_Center_DBModel.SP_GetCustomerServicesByPhoneNumber_Result)">
-            <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+          <Parameter Name="PhoneNumber" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_InsertArrivalTime">
-            <Parameter Name="EmpID" Mode="In" Type="String" />
+          <Parameter Name="EmpID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_InsertEmployeeEvaluationWithPackages">
             <Parameter Name="Month" Mode="In" Type="String" />
@@ -909,6 +895,7 @@ warning 6002: The table/view 'Mens_Beauty_Center_DB.dbo.V_Service' does not have
             <Parameter Name="LastName" Mode="In" Type="String" />
             <Parameter Name="NationalID" Mode="In" Type="String" />
             <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+            <Parameter Name="FixedSalary" Mode="In" Type="Decimal" />
             <Parameter Name="Type" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="SP_UpdateEmployeeSalary">
@@ -920,7 +907,7 @@ warning 6002: The table/view 'Mens_Beauty_Center_DB.dbo.V_Service' does not have
             <Parameter Name="ExpenseMoney" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="SP_UpdateLeavingTime">
-            <Parameter Name="AttendanceID" Mode="In" Type="Int32" />
+          <Parameter Name="AttendanceID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SP_UpdatePackage" ReturnType="Collection(String)">
             <Parameter Name="PackageId" Mode="In" Type="Int32" />

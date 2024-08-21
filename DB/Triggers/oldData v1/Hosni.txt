@@ -1,8 +1,0 @@
-/* Triggeres */ 
-create trigger Trg_PreventUpdateDelete
-on serve
-instead of update, delete
-as
-begin
-    select 'Update Or Delete Operation Is Not Allowed On This Table'
-end
