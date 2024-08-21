@@ -38,3 +38,21 @@ C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens
 C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\EntityFramework.xml
 C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Bea.6EE0052A.Up2Date
+E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\Mens_Beauty_Center.exe.config
+E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\Mens_Beauty_Center.exe
+E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\Mens_Beauty_Center.pdb
+E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\EntityFramework.dll
+E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\EntityFramework.SqlServer.dll
+E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\EntityFramework.xml
+E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\EntityFramework.SqlServer.xml
+E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.csproj.AssemblyReference.cache
+E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.AllCustomers_frm.resources
+E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.Categories.resources
+E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.EmployeeShow.resources
+E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.Evaluation_frm.resources
+E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.Properties.Resources.resources
+E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.csproj.GenerateResource.cache
+E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.csproj.CoreCompileInputs.cache
+E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.csproj.CopyComplete
+E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.exe
+E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.pdb

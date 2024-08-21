@@ -23,5 +23,11 @@ namespace Mens_Beauty_Center
                 e.Cancel = true;
         }
 
+        private void AllCustomers_frm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'mens_Beauty_Center_DBDataSet.Customer' table. You can move, or remove it, as needed.
+            this.customerTableAdapter.Fill(this.mens_Beauty_Center_DBDataSet.Customer);
+            
+        }
     }
 }
