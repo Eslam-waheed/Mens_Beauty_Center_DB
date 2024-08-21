@@ -16,6 +16,12 @@ namespace Mens_Beauty_Center
         {
             InitializeComponent();
         }
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("هل انت متاكد من اغلاق الصفحة", "Closing", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (result == DialogResult.No)
+                e.Cancel = true;
+        }
 
     }
 }

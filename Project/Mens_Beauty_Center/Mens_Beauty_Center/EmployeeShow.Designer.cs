@@ -221,6 +221,7 @@
             this.MaximizeBox = false;
             this.Name = "EmployeeShow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -120,6 +120,7 @@
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(963, 4);
             this.pictureBox5.Name = "pictureBox5";
@@ -130,6 +131,7 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(629, 3);
             this.pictureBox4.Name = "pictureBox4";
@@ -137,9 +139,11 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(348, 4);
             this.pictureBox3.Name = "pictureBox3";
@@ -199,6 +203,7 @@
             // 
             // pictureBox9
             // 
+            this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
             this.pictureBox9.Location = new System.Drawing.Point(963, 13);
             this.pictureBox9.Name = "pictureBox9";
@@ -231,6 +236,7 @@
             // 
             // pictureBox8
             // 
+            this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
             this.pictureBox8.Location = new System.Drawing.Point(656, 13);
             this.pictureBox8.Name = "pictureBox8";
@@ -252,6 +258,7 @@
             // 
             // pictureBox7
             // 
+            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
             this.pictureBox7.Location = new System.Drawing.Point(348, 13);
             this.pictureBox7.Name = "pictureBox7";
@@ -259,9 +266,11 @@
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 6;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // pictureBox6
             // 
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(46, 13);
             this.pictureBox6.Name = "pictureBox6";
@@ -269,6 +278,7 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 5;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // Categories
             // 
@@ -281,6 +291,7 @@
             this.MaximizeBox = false;
             this.Name = "Categories";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();

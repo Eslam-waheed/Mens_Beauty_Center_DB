@@ -33,9 +33,6 @@ namespace Mens_Beauty_Center
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllCustomers_frm));
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
@@ -45,9 +42,10 @@ namespace Mens_Beauty_Center
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(469, 20);
+            this.label1.Location = new System.Drawing.Point(286, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 23);
+            this.label1.Size = new System.Drawing.Size(251, 34);
             this.label1.TabIndex = 1;
             this.label1.Text = "Customers Show";
             // 
@@ -55,62 +53,34 @@ namespace Mens_Beauty_Center
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codeDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.phoneNumberDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.customerBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 57);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 88);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dataGridView1.Size = new System.Drawing.Size(1043, 587);
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.Size = new System.Drawing.Size(1010, 484);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // codeDataGridViewTextBoxColumn
-            // 
-            this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
-            this.codeDataGridViewTextBoxColumn.HeaderText = "كود العميل";
-            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
-            this.codeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codeDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "اسم العميل";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 400;
-            // 
-            // phoneNumberDataGridViewTextBoxColumn
-            // 
-            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "رقم الهاتف";
-            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-            this.phoneNumberDataGridViewTextBoxColumn.Width = 400;
             // 
             // customerBindingSource
             // 
             this.customerBindingSource.DataMember = "Customer";
             // 
-            // mens_Beauty_CenterDataSet
-            // 
-           
-            // customerTableAdapter
-            // 
-            // 
             // AllCustomers_frm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1050, 646);
+            this.ClientSize = new System.Drawing.Size(1043, 586);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "AllCustomers_frm";
             this.Text = "العملاء";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.ResumeLayout(false);

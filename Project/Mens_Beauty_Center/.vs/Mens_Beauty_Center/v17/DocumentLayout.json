@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\C#_Project\\Mens_Beauty_Center_DB\\Project\\Mens_Beauty_Center\\",
+  "WorkspaceRootPath": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\C#Project\\Mens_Beauty_Center_DB\\Project\\Mens_Beauty_Center\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|E:\\C#_Project\\Mens_Beauty_Center_DB\\Project\\Mens_Beauty_Center\\mens_beauty_center\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|solutionrelative:mens_beauty_center\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|c:\\users\\moham\\onedrive\\desktop\\iti\\c#project\\mens_beauty_center_db\\project\\mens_beauty_center\\mens_beauty_center\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|solutionrelative:mens_beauty_center\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,24 +14,19 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\C#_Project\\Mens_Beauty_Center_DB\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Program.cs",
-              "RelativeDocumentMoniker": "Mens_Beauty_Center\\Program.cs",
-              "ToolTip": "E:\\C#_Project\\Mens_Beauty_Center_DB\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Program.cs",
-              "RelativeToolTip": "Mens_Beauty_Center\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAATAAAAAAAAAA==",
+              "Title": "Categories.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\C#Project\\Mens_Beauty_Center_DB\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Categories.cs",
+              "RelativeDocumentMoniker": "Mens_Beauty_Center\\Categories.cs",
+              "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\C#Project\\Mens_Beauty_Center_DB\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Categories.cs [Design]",
+              "RelativeToolTip": "Mens_Beauty_Center\\Categories.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T22:31:27.92Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-21T00:35:33.727Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
