@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Mens_Beauty_Center_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmployeeID" Type="String" MaxLength="14" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Emp_Account" FromRole="Account" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Attendance">
+    <Key>
+      <PropertyRef Name="AttendanceID" />
+    </Key>
+    <Property Name="AttendanceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NationalID" Type="String" MaxLength="14" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ExpenseMoney" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="ArrivalTime" Type="DateTime" Precision="3" />
+    <Property Name="DepartureTime" Type="DateTime" Precision="3" />
+    <Property Name="DailyPocketMoney" Type="Decimal" Precision="9" Scale="2" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_NationalID" FromRole="Attendance" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="PackageCustomers" Relationship="Self.FK__PackageCu__Custo__46E78A0C" FromRole="Customer" ToRole="PackageCustomer" />
+    <NavigationProperty Name="serves" Relationship="Self.FK__serve__CustomerI__4D94879B" FromRole="Customer" ToRole="serve" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="NationalID" />
+    </Key>
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NationalID" Type="String" MaxLength="14" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FixedSalary" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="Type" Type="Boolean" />
+    <NavigationProperty Name="Accounts" Relationship="Self.FK_Emp_Account" FromRole="Employee" ToRole="Account" />
+    <NavigationProperty Name="Attendances" Relationship="Self.FK_Employee_NationalID" FromRole="Employee" ToRole="Attendance" />
+    <NavigationProperty Name="PackageCustomers" Relationship="Self.FK__PackageCu__Natio__49C3F6B7" FromRole="Employee" ToRole="PackageCustomer" />
+    <NavigationProperty Name="serves" Relationship="Self.FK_Employee_NationalID_serve" FromRole="Employee" ToRole="serve" />
+    <NavigationProperty Name="Evaluations" Relationship="Self.FK_Evaluation_Employee" FromRole="Employee" ToRole="Evaluation" />
+  </EntityType>
+  <EntityType Name="Evaluation">
+    <Key>
+      <PropertyRef Name="Month" />
+      <PropertyRef Name="NationalID" />
+    </Key>
+    <Property Name="Month" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TotalAmountOfMonth" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ProfitPercentage" Type="Decimal" Precision="2" Scale="1" Nullable="false" />
+    <Property Name="Bonus" Type="Decimal" Precision="25" Scale="7" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="NationalID" Type="String" MaxLength="14" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Evaluation_Employee" FromRole="Evaluation" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Package">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="PackageCustomers" Relationship="Self.FK__PackageCu__Packa__47DBAE45" FromRole="Package" ToRole="PackageCustomer" />
+  </EntityType>
+  <EntityType Name="PackageCustomer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+      <PropertyRef Name="PackageId" />
+      <PropertyRef Name="NationalID" />
+    </Key>
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="PackageId" Type="Int32" Nullable="false" />
+    <Property Name="NationalID" Type="String" MaxLength="14" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Deposit" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="TakeDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__PackageCu__Custo__46E78A0C" FromRole="PackageCustomer" ToRole="Customer" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK__PackageCu__Natio__49C3F6B7" FromRole="PackageCustomer" ToRole="Employee" />
+    <NavigationProperty Name="Package" Relationship="Self.FK__PackageCu__Packa__47DBAE45" FromRole="PackageCustomer" ToRole="Package" />
+  </EntityType>
+  <EntityType Name="serve">
+    <Key>
+      <PropertyRef Name="NationalID" />
+      <PropertyRef Name="CustomerId" />
+      <PropertyRef Name="ServiceId" />
+    </Key>
+    <Property Name="NationalID" Type="String" MaxLength="14" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="ServiceId" Type="Int32" Nullable="false" />
+    <Property Name="Servedate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__serve__CustomerI__4D94879B" FromRole="serve" ToRole="Customer" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_NationalID_serve" FromRole="serve" ToRole="Employee" />
+    <NavigationProperty Name="Service" Relationship="Self.FK__serve__ServiceId__4E88ABD4" FromRole="serve" ToRole="Service" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="serves" Relationship="Self.FK__serve__ServiceId__4E88ABD4" FromRole="Service" ToRole="serve" />
+  </EntityType>
+  <EntityType Name="V_AllCustomers">
+    <Key>
+      <PropertyRef Name="Code" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="PhoneNumber" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_AllEmployees">
+    <Key>
+      <PropertyRef Name="NationalID" />
+      <PropertyRef Name="FirstName" />
+      <PropertyRef Name="LastName" />
+      <PropertyRef Name="PhoneNumber" />
+      <PropertyRef Name="FixedSalary" />
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="NationalID" Type="String" MaxLength="14" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FixedSalary" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_AttendanceWithEmployeeName">
+    <Key>
+      <PropertyRef Name="AttendanceID" />
+      <PropertyRef Name="FirstName" />
+      <PropertyRef Name="LastName" />
+    </Key>
+    <Property Name="AttendanceID" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ArrivalTime" Type="DateTime" Precision="3" />
+    <Property Name="DepartureTime" Type="DateTime" Precision="3" />
+    <Property Name="ExpenseMoney" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="DailyPocketMoney" Type="Decimal" Precision="9" Scale="2" />
+  </EntityType>
+  <EntityType Name="V_CoustomerVipDetails">
+    <Key>
+      <PropertyRef Name="Customer_Name" />
+      <PropertyRef Name="Customer_Phone" />
+      <PropertyRef Name="Package_Name" />
+      <PropertyRef Name="Package_Description" />
+      <PropertyRef Name="Package_Cost" />
+      <PropertyRef Name="Customer_Deposit" />
+      <PropertyRef Name="TakeDate" />
+    </Key>
+    <Property Name="Customer_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Customer_Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Package_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Package_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Package_Cost" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Customer_Deposit" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="TakeDate" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="V_Package">
+    <Key>
+      <PropertyRef Name="PackageName" />
+      <PropertyRef Name="PackageDescription" />
+      <PropertyRef Name="PackageTotalAmount" />
+    </Key>
+    <Property Name="PackageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PackageDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PackageTotalAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_Service">
+    <Key>
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Cost" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Cost" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Emp_Account">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="NationalID" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_NationalID">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Attendance" Type="Self.Attendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="NationalID" />
+      </Principal>
+      <Dependent Role="Attendance">
+        <PropertyRef Name="NationalID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PackageCu__Custo__46E78A0C">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="PackageCustomer" Type="Self.PackageCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="PackageCustomer">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__serve__CustomerI__4D94879B">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="serve" Type="Self.serve" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="serve">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PackageCu__Natio__49C3F6B7">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="PackageCustomer" Type="Self.PackageCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="NationalID" />
+      </Principal>
+      <Dependent Role="PackageCustomer">
+        <PropertyRef Name="NationalID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_NationalID_serve">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="serve" Type="Self.serve" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="NationalID" />
+      </Principal>
+      <Dependent Role="serve">
+        <PropertyRef Name="NationalID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Evaluation_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Evaluation" Type="Self.Evaluation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="NationalID" />
+      </Principal>
+      <Dependent Role="Evaluation">
+        <PropertyRef Name="NationalID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PackageCu__Packa__47DBAE45">
+    <End Role="Package" Type="Self.Package" Multiplicity="1" />
+    <End Role="PackageCustomer" Type="Self.PackageCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Package">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PackageCustomer">
+        <PropertyRef Name="PackageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__serve__ServiceId__4E88ABD4">
+    <End Role="Service" Type="Self.Service" Multiplicity="1" />
+    <End Role="serve" Type="Self.serve" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="serve">
+        <PropertyRef Name="ServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Mens_Beauty_Center_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
+    <EntitySet Name="Attendances" EntityType="Self.Attendance" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="Evaluations" EntityType="Self.Evaluation" />
+    <EntitySet Name="Packages" EntityType="Self.Package" />
+    <EntitySet Name="PackageCustomers" EntityType="Self.PackageCustomer" />
+    <EntitySet Name="serves" EntityType="Self.serve" />
+    <EntitySet Name="Services" EntityType="Self.Service" />
+    <EntitySet Name="V_AllCustomers" EntityType="Self.V_AllCustomers" />
+    <EntitySet Name="V_AllEmployees" EntityType="Self.V_AllEmployees" />
+    <EntitySet Name="V_AttendanceWithEmployeeName" EntityType="Self.V_AttendanceWithEmployeeName" />
+    <EntitySet Name="V_CoustomerVipDetails" EntityType="Self.V_CoustomerVipDetails" />
+    <EntitySet Name="V_Package" EntityType="Self.V_Package" />
+    <EntitySet Name="V_Service" EntityType="Self.V_Service" />
+    <AssociationSet Name="FK_Emp_Account" Association="Self.FK_Emp_Account">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Account" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_NationalID" Association="Self.FK_Employee_NationalID">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Attendance" EntitySet="Attendances" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PackageCu__Custo__46E78A0C" Association="Self.FK__PackageCu__Custo__46E78A0C">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="PackageCustomer" EntitySet="PackageCustomers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__serve__CustomerI__4D94879B" Association="Self.FK__serve__CustomerI__4D94879B">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="serve" EntitySet="serves" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PackageCu__Natio__49C3F6B7" Association="Self.FK__PackageCu__Natio__49C3F6B7">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="PackageCustomer" EntitySet="PackageCustomers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_NationalID_serve" Association="Self.FK_Employee_NationalID_serve">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="serve" EntitySet="serves" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Evaluation_Employee" Association="Self.FK_Evaluation_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Evaluation" EntitySet="Evaluations" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PackageCu__Packa__47DBAE45" Association="Self.FK__PackageCu__Packa__47DBAE45">
+      <End Role="Package" EntitySet="Packages" />
+      <End Role="PackageCustomer" EntitySet="PackageCustomers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__serve__ServiceId__4E88ABD4" Association="Self.FK__serve__ServiceId__4E88ABD4">
+      <End Role="Service" EntitySet="Services" />
+      <End Role="serve" EntitySet="serves" />
+    </AssociationSet>
+    <FunctionImport Name="SP_AddCustomer">
+      <Parameter Name="C_Name" Mode="In" Type="String" />
+      <Parameter Name="C_Phone" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_AddEmployee">
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="NationalID" Mode="In" Type="String" />
+      <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+      <Parameter Name="FixedSalary" Mode="In" Type="Decimal" />
+      <Parameter Name="Type" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_AddEmployeeServesCustomer">
+      <Parameter Name="p_NationalID" Mode="In" Type="String" />
+      <Parameter Name="p_CustomerCode" Mode="In" Type="Int32" />
+      <Parameter Name="p_ServiceID" Mode="In" Type="Int32" />
+      <Parameter Name="P_ServDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_AddPackage">
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="TotalAmount" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="SP_AddService">
+      <Parameter Name="ServiceName" Mode="In" Type="String" />
+      <Parameter Name="Price" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_CreateManagerAccount">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="UserPassword" Mode="In" Type="String" />
+      <Parameter Name="EmployeeID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DeleteManagerAccount">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DeletePackage" ReturnType="Collection(String)">
+      <Parameter Name="PackageId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DeleteService">
+      <Parameter Name="ServiceID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_EmployeeReport" ReturnType="Collection(Mens_Beauty_Center_DBModel.SP_EmployeeReport_Result)">
+      <Parameter Name="EmployeeID" Mode="In" Type="Int32" />
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetCustomerByPhoneNumber" ReturnType="Collection(Mens_Beauty_Center_DBModel.SP_GetCustomerByPhoneNumber_Result)">
+      <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetCustomerPackagesByPhoneNumber" ReturnType="Collection(Mens_Beauty_Center_DBModel.SP_GetCustomerPackagesByPhoneNumber_Result)">
+      <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetCustomerServicesByPhoneNumber" ReturnType="Collection(Mens_Beauty_Center_DBModel.SP_GetCustomerServicesByPhoneNumber_Result)">
+      <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_InsertArrivalTime">
+      <Parameter Name="EmpID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_InsertEmployeeEvaluationWithPackages">
+      <Parameter Name="Month" Mode="In" Type="String" />
+      <Parameter Name="ProfitPercentage" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="SP_UpdateEmployeeInfo">
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="NationalID" Mode="In" Type="String" />
+      <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+      <Parameter Name="Type" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_UpdateEmployeeSalary">
+      <Parameter Name="NationalID" Mode="In" Type="String" />
+      <Parameter Name="FixedSalary" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="SP_UpdateExpenseMoney" ReturnType="Collection(String)">
+      <Parameter Name="AttendanceID" Mode="In" Type="Int32" />
+      <Parameter Name="ExpenseMoney" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="SP_UpdateLeavingTime">
+      <Parameter Name="AttendanceID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_UpdatePackage" ReturnType="Collection(String)">
+      <Parameter Name="PackageId" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="TotalAmount" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="SP_UpdateService">
+      <Parameter Name="ServiceId" Mode="In" Type="Int32" />
+      <Parameter Name="ServiceName" Mode="In" Type="String" />
+      <Parameter Name="Price" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="SP_EmployeeReport_Result">
+    <Property Type="String" Name="EmployeeName" Nullable="false" MaxLength="101" />
+    <Property Type="Int32" Name="CustomerCount" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_GetCustomerByPhoneNumber_Result">
+    <Property Type="Int32" Name="Code" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber" Nullable="false" MaxLength="11" />
+  </ComplexType>
+  <ComplexType Name="SP_GetCustomerPackagesByPhoneNumber_Result">
+    <Property Type="String" Name="PackageName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Description" Nullable="false" />
+    <Property Type="Decimal" Name="TotalAmount" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="TakeDate" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_GetCustomerServicesByPhoneNumber_Result">
+    <Property Type="String" Name="ServiceName" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="Price" Nullable="false" />
+    <Property Type="DateTime" Name="Servedate" Nullable="false" />
+  </ComplexType>
+</Schema>

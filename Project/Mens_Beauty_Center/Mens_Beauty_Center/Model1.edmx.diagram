@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0ba5ed29c7ed4f27a1e564dfb3bde3bb" Name="Diagram1">
+        <EntityTypeShape EntityType="Mens_Beauty_Center_DBModel.Account" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mens_Beauty_Center_DBModel.Attendance" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mens_Beauty_Center_DBModel.Customer" Width="1.5" PointX="3.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mens_Beauty_Center_DBModel.Employee" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mens_Beauty_Center_DBModel.Evaluation" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mens_Beauty_Center_DBModel.Package" Width="1.5" PointX="3.75" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mens_Beauty_Center_DBModel.PackageCustomer" Width="1.5" PointX="6" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mens_Beauty_Center_DBModel.serve" Width="1.5" PointX="6" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mens_Beauty_Center_DBModel.Service" Width="1.5" PointX="3.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mens_Beauty_Center_DBModel.V_AllCustomers" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mens_Beauty_Center_DBModel.V_AllEmployees" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mens_Beauty_Center_DBModel.V_AttendanceWithEmployeeName" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mens_Beauty_Center_DBModel.V_CoustomerVipDetails" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mens_Beauty_Center_DBModel.V_Package" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mens_Beauty_Center_DBModel.V_Service" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Mens_Beauty_Center_DBModel.FK_Emp_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="Mens_Beauty_Center_DBModel.FK_Employee_NationalID" ManuallyRouted="false" />
+        <AssociationConnector Association="Mens_Beauty_Center_DBModel.FK__PackageCu__Custo__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="Mens_Beauty_Center_DBModel.FK__serve__CustomerI__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="Mens_Beauty_Center_DBModel.FK__PackageCu__Natio__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="Mens_Beauty_Center_DBModel.FK_Employee_NationalID_serve" ManuallyRouted="false" />
+        <AssociationConnector Association="Mens_Beauty_Center_DBModel.FK_Evaluation_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Mens_Beauty_Center_DBModel.FK__PackageCu__Packa__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="Mens_Beauty_Center_DBModel.FK__serve__ServiceId__4E88ABD4" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Mens_Beauty_Center_DBModelStoreContainer" CdmEntityContainer="Mens_Beauty_Center_DBEntities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Attendances">
+      <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.Attendance">
+        <MappingFragment StoreEntitySet="Attendance">
+          <ScalarProperty Name="AttendanceID" ColumnName="AttendanceID" />
+          <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+          <ScalarProperty Name="ExpenseMoney" ColumnName="ExpenseMoney" />
+          <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+          <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+          <ScalarProperty Name="DailyPocketMoney" ColumnName="DailyPocketMoney" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="FixedSalary" ColumnName="FixedSalary" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Evaluations">
+      <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.Evaluation">
+        <MappingFragment StoreEntitySet="Evaluation">
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="TotalAmountOfMonth" ColumnName="TotalAmountOfMonth" />
+          <ScalarProperty Name="ProfitPercentage" ColumnName="ProfitPercentage" />
+          <ScalarProperty Name="Bonus" ColumnName="Bonus" />
+          <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Packages">
+      <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.Package">
+        <MappingFragment StoreEntitySet="Package">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PackageCustomers">
+      <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.PackageCustomer">
+        <MappingFragment StoreEntitySet="PackageCustomer">
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+          <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+          <ScalarProperty Name="Deposit" ColumnName="Deposit" />
+          <ScalarProperty Name="TakeDate" ColumnName="TakeDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="serves">
+      <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.serve">
+        <MappingFragment StoreEntitySet="serve">
+          <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="Servedate" ColumnName="Servedate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_AllCustomers">
+      <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.V_AllCustomers">
+        <MappingFragment StoreEntitySet="V_AllCustomers">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_AllEmployees">
+      <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.V_AllEmployees">
+        <MappingFragment StoreEntitySet="V_AllEmployees">
+          <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="FixedSalary" ColumnName="FixedSalary" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_AttendanceWithEmployeeName">
+      <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.V_AttendanceWithEmployeeName">
+        <MappingFragment StoreEntitySet="V_AttendanceWithEmployeeName">
+          <ScalarProperty Name="AttendanceID" ColumnName="AttendanceID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+          <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+          <ScalarProperty Name="ExpenseMoney" ColumnName="ExpenseMoney" />
+          <ScalarProperty Name="DailyPocketMoney" ColumnName="DailyPocketMoney" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_CoustomerVipDetails">
+      <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.V_CoustomerVipDetails">
+        <MappingFragment StoreEntitySet="V_CoustomerVipDetails">
+          <ScalarProperty Name="Customer_Name" ColumnName="Customer Name" />
+          <ScalarProperty Name="Customer_Phone" ColumnName="Customer Phone" />
+          <ScalarProperty Name="Package_Name" ColumnName="Package Name" />
+          <ScalarProperty Name="Package_Description" ColumnName="Package Description" />
+          <ScalarProperty Name="Package_Cost" ColumnName="Package Cost" />
+          <ScalarProperty Name="Customer_Deposit" ColumnName="Customer Deposit" />
+          <ScalarProperty Name="TakeDate" ColumnName="TakeDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_Package">
+      <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.V_Package">
+        <MappingFragment StoreEntitySet="V_Package">
+          <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+          <ScalarProperty Name="PackageDescription" ColumnName="PackageDescription" />
+          <ScalarProperty Name="PackageTotalAmount" ColumnName="PackageTotalAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_Service">
+      <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.V_Service">
+        <MappingFragment StoreEntitySet="V_Service">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_AddCustomer" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_AddCustomer" />
+    <FunctionImportMapping FunctionImportName="SP_AddEmployee" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_AddEmployee" />
+    <FunctionImportMapping FunctionImportName="SP_AddEmployeeServesCustomer" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_AddEmployeeServesCustomer" />
+    <FunctionImportMapping FunctionImportName="SP_AddPackage" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_AddPackage" />
+    <FunctionImportMapping FunctionImportName="SP_AddService" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_AddService" />
+    <FunctionImportMapping FunctionImportName="SP_CreateManagerAccount" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_CreateManagerAccount" />
+    <FunctionImportMapping FunctionImportName="SP_DeleteManagerAccount" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_DeleteManagerAccount" />
+    <FunctionImportMapping FunctionImportName="SP_DeletePackage" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_DeletePackage" />
+    <FunctionImportMapping FunctionImportName="SP_DeleteService" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_DeleteService" />
+    <FunctionImportMapping FunctionImportName="SP_EmployeeReport" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_EmployeeReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Mens_Beauty_Center_DBModel.SP_EmployeeReport_Result">
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="CustomerCount" ColumnName="CustomerCount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetCustomerByPhoneNumber" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_GetCustomerByPhoneNumber">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Mens_Beauty_Center_DBModel.SP_GetCustomerByPhoneNumber_Result">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetCustomerPackagesByPhoneNumber" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_GetCustomerPackagesByPhoneNumber">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Mens_Beauty_Center_DBModel.SP_GetCustomerPackagesByPhoneNumber_Result">
+          <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="TakeDate" ColumnName="TakeDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetCustomerServicesByPhoneNumber" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_GetCustomerServicesByPhoneNumber">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Mens_Beauty_Center_DBModel.SP_GetCustomerServicesByPhoneNumber_Result">
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Servedate" ColumnName="Servedate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_InsertArrivalTime" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_InsertArrivalTime" />
+    <FunctionImportMapping FunctionImportName="SP_InsertEmployeeEvaluationWithPackages" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_InsertEmployeeEvaluationWithPackages" />
+    <FunctionImportMapping FunctionImportName="SP_UpdateEmployeeInfo" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_UpdateEmployeeInfo" />
+    <FunctionImportMapping FunctionImportName="SP_UpdateEmployeeSalary" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_UpdateEmployeeSalary" />
+    <FunctionImportMapping FunctionImportName="SP_UpdateExpenseMoney" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_UpdateExpenseMoney" />
+    <FunctionImportMapping FunctionImportName="SP_UpdateLeavingTime" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_UpdateLeavingTime" />
+    <FunctionImportMapping FunctionImportName="SP_UpdatePackage" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_UpdatePackage" />
+    <FunctionImportMapping FunctionImportName="SP_UpdateService" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_UpdateService" />
+  </EntityContainerMapping>
+</Mapping>

@@ -33,3 +33,8 @@ C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens
 C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.csproj.CoreCompileInputs.cache
 C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.exe
 C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.pdb
+C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\EntityFramework.dll
+C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\EntityFramework.xml
+C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Bea.6EE0052A.Up2Date

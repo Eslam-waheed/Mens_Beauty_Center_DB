@@ -1,0 +1,1196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Mens_Beauty_Center_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserPassword" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmployeeID" Type="char" MaxLength="14" />
+        </EntityType>
+        <EntityType Name="Attendance">
+          <Key>
+            <PropertyRef Name="AttendanceID" />
+          </Key>
+          <Property Name="AttendanceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NationalID" Type="char" MaxLength="14" Nullable="false" />
+          <Property Name="ExpenseMoney" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="ArrivalTime" Type="datetime" />
+          <Property Name="DepartureTime" Type="datetime" />
+          <Property Name="DailyPocketMoney" Type="decimal" Precision="9" Scale="2" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="11" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="NationalID" />
+          </Key>
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NationalID" Type="char" MaxLength="14" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="FixedSalary" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="Type" Type="bit" />
+        </EntityType>
+        <EntityType Name="Evaluation">
+          <Key>
+            <PropertyRef Name="Month" />
+            <PropertyRef Name="NationalID" />
+          </Key>
+          <Property Name="Month" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="TotalAmountOfMonth" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ProfitPercentage" Type="decimal" Precision="2" Scale="1" Nullable="false" />
+          <Property Name="Bonus" Type="decimal" Precision="25" Scale="7" StoreGeneratedPattern="Computed" />
+          <Property Name="NationalID" Type="char" MaxLength="14" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Package">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PackageCustomer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+            <PropertyRef Name="PackageId" />
+            <PropertyRef Name="NationalID" />
+          </Key>
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+          <Property Name="PackageId" Type="int" Nullable="false" />
+          <Property Name="NationalID" Type="char" MaxLength="14" Nullable="false" />
+          <Property Name="Deposit" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="TakeDate" Type="date" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Mens_Beauty_Center_DB.dbo.PackageHistory' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="PackageHistory">
+          <Property Name="PackageID" Type="int" />
+          <Property Name="OldTotalAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ChangeDate" Type="date" />
+        </EntityType>-->
+        <EntityType Name="serve">
+          <Key>
+            <PropertyRef Name="NationalID" />
+            <PropertyRef Name="CustomerId" />
+            <PropertyRef Name="ServiceId" />
+          </Key>
+          <Property Name="NationalID" Type="char" MaxLength="14" Nullable="false" />
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+          <Property Name="ServiceId" Type="int" Nullable="false" />
+          <Property Name="Servedate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Mens_Beauty_Center_DB.dbo.ServiceHistory' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ServiceHistory">
+          <Property Name="ServiceID" Type="int" />
+          <Property Name="OldPrice" Type="int" />
+          <Property Name="ChangeDate" Type="date" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Mens_Beauty_Center_DB.dbo.V_AllCustomers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_AllCustomers">
+          <Key>
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="PhoneNumber" />
+          </Key>
+          <Property Name="Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="11" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Mens_Beauty_Center_DB.dbo.V_AllEmployees' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_AllEmployees">
+          <Key>
+            <PropertyRef Name="NationalID" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="PhoneNumber" />
+            <PropertyRef Name="FixedSalary" />
+            <PropertyRef Name="type" />
+          </Key>
+          <Property Name="NationalID" Type="char" MaxLength="14" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="FixedSalary" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="7" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Mens_Beauty_Center_DB.dbo.V_AttendanceWithEmployeeName' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_AttendanceWithEmployeeName">
+          <Key>
+            <PropertyRef Name="AttendanceID" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+          </Key>
+          <Property Name="AttendanceID" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ArrivalTime" Type="datetime" />
+          <Property Name="DepartureTime" Type="datetime" />
+          <Property Name="ExpenseMoney" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="DailyPocketMoney" Type="decimal" Precision="9" Scale="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Mens_Beauty_Center_DB.dbo.V_CoustomerVipDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_CoustomerVipDetails">
+          <Key>
+            <PropertyRef Name="Customer Name" />
+            <PropertyRef Name="Customer Phone" />
+            <PropertyRef Name="Package Name" />
+            <PropertyRef Name="Package Description" />
+            <PropertyRef Name="Package Cost" />
+            <PropertyRef Name="Customer Deposit" />
+            <PropertyRef Name="TakeDate" />
+          </Key>
+          <Property Name="Customer Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Customer Phone" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="Package Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Package Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Package Cost" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Customer Deposit" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="TakeDate" Type="date" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Mens_Beauty_Center_DB.dbo.V_Package' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_Package">
+          <Key>
+            <PropertyRef Name="PackageName" />
+            <PropertyRef Name="PackageDescription" />
+            <PropertyRef Name="PackageTotalAmount" />
+          </Key>
+          <Property Name="PackageName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PackageDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PackageTotalAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Mens_Beauty_Center_DB.dbo.V_Service' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_Service">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Cost" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Cost" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__PackageCu__Custo__46E78A0C">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="PackageCustomer" Type="Self.PackageCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="PackageCustomer">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PackageCu__Natio__49C3F6B7">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="PackageCustomer" Type="Self.PackageCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="NationalID" />
+            </Principal>
+            <Dependent Role="PackageCustomer">
+              <PropertyRef Name="NationalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PackageCu__Packa__47DBAE45">
+          <End Role="Package" Type="Self.Package" Multiplicity="1" />
+          <End Role="PackageCustomer" Type="Self.PackageCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Package">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PackageCustomer">
+              <PropertyRef Name="PackageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__serve__CustomerI__4D94879B">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="serve" Type="Self.serve" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="serve">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__serve__ServiceId__4E88ABD4">
+          <End Role="Service" Type="Self.Service" Multiplicity="1" />
+          <End Role="serve" Type="Self.serve" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="serve">
+              <PropertyRef Name="ServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Emp_Account">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="NationalID" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_NationalID">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Attendance" Type="Self.Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="NationalID" />
+            </Principal>
+            <Dependent Role="Attendance">
+              <PropertyRef Name="NationalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_NationalID_serve">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="serve" Type="Self.serve" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="NationalID" />
+            </Principal>
+            <Dependent Role="serve">
+              <PropertyRef Name="NationalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Evaluation_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Evaluation" Type="Self.Evaluation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="NationalID" />
+            </Principal>
+            <Dependent Role="Evaluation">
+              <PropertyRef Name="NationalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="SP_AddCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="C_Name" Type="varchar" Mode="In" />
+          <Parameter Name="C_Phone" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SP_AddEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="LastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="NationalID" Type="char" Mode="In" />
+          <Parameter Name="PhoneNumber" Type="varchar" Mode="In" />
+          <Parameter Name="FixedSalary" Type="decimal" Mode="In" />
+          <Parameter Name="Type" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="SP_AddEmployeeServesCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="p_NationalID" Type="varchar" Mode="In" />
+          <Parameter Name="p_CustomerCode" Type="int" Mode="In" />
+          <Parameter Name="p_ServiceID" Type="int" Mode="In" />
+          <Parameter Name="P_ServDate" Type="date" Mode="In" />
+        </Function>
+        <Function Name="SP_AddPackage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Description" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="TotalAmount" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="SP_AddService" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ServiceName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Price" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_CreateManagerAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+          <Parameter Name="UserPassword" Type="varchar" Mode="In" />
+          <Parameter Name="EmployeeID" Type="char" Mode="In" />
+        </Function>
+        <Function Name="SP_DeleteManagerAccount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SP_DeletePackage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PackageId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_DeleteService" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ServiceID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_EmployeeReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EmployeeID" Type="int" Mode="In" />
+          <Parameter Name="StartDate" Type="date" Mode="In" />
+          <Parameter Name="EndDate" Type="date" Mode="In" />
+        </Function>
+        <Function Name="SP_GetCustomerByPhoneNumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PhoneNumber" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SP_GetCustomerPackagesByPhoneNumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PhoneNumber" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SP_GetCustomerServicesByPhoneNumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PhoneNumber" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SP_InsertArrivalTime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EmpID" Type="char" Mode="In" />
+        </Function>
+        <Function Name="SP_InsertEmployeeEvaluationWithPackages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Month" Type="nvarchar" Mode="In" />
+          <Parameter Name="ProfitPercentage" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="SP_UpdateEmployeeInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="LastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="NationalID" Type="char" Mode="In" />
+          <Parameter Name="PhoneNumber" Type="varchar" Mode="In" />
+          <Parameter Name="Type" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="SP_UpdateEmployeeSalary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NationalID" Type="char" Mode="In" />
+          <Parameter Name="FixedSalary" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="SP_UpdateExpenseMoney" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AttendanceID" Type="int" Mode="In" />
+          <Parameter Name="ExpenseMoney" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="SP_UpdateLeavingTime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AttendanceID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_UpdatePackage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PackageId" Type="int" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Description" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="TotalAmount" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="SP_UpdateService" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ServiceId" Type="int" Mode="In" />
+          <Parameter Name="ServiceName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Price" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="Mens_Beauty_Center_DBModelStoreContainer">
+          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Attendance" EntityType="Self.Attendance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Evaluation" EntityType="Self.Evaluation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Package" EntityType="Self.Package" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PackageCustomer" EntityType="Self.PackageCustomer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="serve" EntityType="Self.serve" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="V_AllCustomers" EntityType="Self.V_AllCustomers" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_AllCustomers].[Code] AS [Code], 
+    [V_AllCustomers].[Name] AS [Name], 
+    [V_AllCustomers].[PhoneNumber] AS [PhoneNumber]
+    FROM [dbo].[V_AllCustomers] AS [V_AllCustomers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_AllEmployees" EntityType="Self.V_AllEmployees" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_AllEmployees].[NationalID] AS [NationalID], 
+    [V_AllEmployees].[FirstName] AS [FirstName], 
+    [V_AllEmployees].[LastName] AS [LastName], 
+    [V_AllEmployees].[PhoneNumber] AS [PhoneNumber], 
+    [V_AllEmployees].[FixedSalary] AS [FixedSalary], 
+    [V_AllEmployees].[type] AS [type]
+    FROM [dbo].[V_AllEmployees] AS [V_AllEmployees]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_AttendanceWithEmployeeName" EntityType="Self.V_AttendanceWithEmployeeName" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_AttendanceWithEmployeeName].[AttendanceID] AS [AttendanceID], 
+    [V_AttendanceWithEmployeeName].[FirstName] AS [FirstName], 
+    [V_AttendanceWithEmployeeName].[LastName] AS [LastName], 
+    [V_AttendanceWithEmployeeName].[ArrivalTime] AS [ArrivalTime], 
+    [V_AttendanceWithEmployeeName].[DepartureTime] AS [DepartureTime], 
+    [V_AttendanceWithEmployeeName].[ExpenseMoney] AS [ExpenseMoney], 
+    [V_AttendanceWithEmployeeName].[DailyPocketMoney] AS [DailyPocketMoney]
+    FROM [dbo].[V_AttendanceWithEmployeeName] AS [V_AttendanceWithEmployeeName]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_CoustomerVipDetails" EntityType="Self.V_CoustomerVipDetails" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_CoustomerVipDetails].[Customer Name] AS [Customer Name], 
+    [V_CoustomerVipDetails].[Customer Phone] AS [Customer Phone], 
+    [V_CoustomerVipDetails].[Package Name] AS [Package Name], 
+    [V_CoustomerVipDetails].[Package Description] AS [Package Description], 
+    [V_CoustomerVipDetails].[Package Cost] AS [Package Cost], 
+    [V_CoustomerVipDetails].[Customer Deposit] AS [Customer Deposit], 
+    [V_CoustomerVipDetails].[TakeDate] AS [TakeDate]
+    FROM [dbo].[V_CoustomerVipDetails] AS [V_CoustomerVipDetails]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_Package" EntityType="Self.V_Package" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_Package].[PackageName] AS [PackageName], 
+    [V_Package].[PackageDescription] AS [PackageDescription], 
+    [V_Package].[PackageTotalAmount] AS [PackageTotalAmount]
+    FROM [dbo].[V_Package] AS [V_Package]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_Service" EntityType="Self.V_Service" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_Service].[Name] AS [Name], 
+    [V_Service].[Cost] AS [Cost]
+    FROM [dbo].[V_Service] AS [V_Service]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__PackageCu__Custo__46E78A0C" Association="Self.FK__PackageCu__Custo__46E78A0C">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="PackageCustomer" EntitySet="PackageCustomer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PackageCu__Natio__49C3F6B7" Association="Self.FK__PackageCu__Natio__49C3F6B7">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="PackageCustomer" EntitySet="PackageCustomer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PackageCu__Packa__47DBAE45" Association="Self.FK__PackageCu__Packa__47DBAE45">
+            <End Role="Package" EntitySet="Package" />
+            <End Role="PackageCustomer" EntitySet="PackageCustomer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__serve__CustomerI__4D94879B" Association="Self.FK__serve__CustomerI__4D94879B">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="serve" EntitySet="serve" />
+          </AssociationSet>
+          <AssociationSet Name="FK__serve__ServiceId__4E88ABD4" Association="Self.FK__serve__ServiceId__4E88ABD4">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="serve" EntitySet="serve" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Emp_Account" Association="Self.FK_Emp_Account">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_NationalID" Association="Self.FK_Employee_NationalID">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Attendance" EntitySet="Attendance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_NationalID_serve" Association="Self.FK_Employee_NationalID_serve">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="serve" EntitySet="serve" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Evaluation_Employee" Association="Self.FK_Evaluation_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Evaluation" EntitySet="Evaluation" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Mens_Beauty_Center_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmployeeID" Type="String" MaxLength="14" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Emp_Account" FromRole="Account" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Attendance">
+          <Key>
+            <PropertyRef Name="AttendanceID" />
+          </Key>
+          <Property Name="AttendanceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NationalID" Type="String" MaxLength="14" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ExpenseMoney" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="ArrivalTime" Type="DateTime" Precision="3" />
+          <Property Name="DepartureTime" Type="DateTime" Precision="3" />
+          <Property Name="DailyPocketMoney" Type="Decimal" Precision="9" Scale="2" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_NationalID" FromRole="Attendance" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PackageCustomers" Relationship="Self.FK__PackageCu__Custo__46E78A0C" FromRole="Customer" ToRole="PackageCustomer" />
+          <NavigationProperty Name="serves" Relationship="Self.FK__serve__CustomerI__4D94879B" FromRole="Customer" ToRole="serve" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="NationalID" />
+          </Key>
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NationalID" Type="String" MaxLength="14" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FixedSalary" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="Type" Type="Boolean" />
+          <NavigationProperty Name="Accounts" Relationship="Self.FK_Emp_Account" FromRole="Employee" ToRole="Account" />
+          <NavigationProperty Name="Attendances" Relationship="Self.FK_Employee_NationalID" FromRole="Employee" ToRole="Attendance" />
+          <NavigationProperty Name="PackageCustomers" Relationship="Self.FK__PackageCu__Natio__49C3F6B7" FromRole="Employee" ToRole="PackageCustomer" />
+          <NavigationProperty Name="serves" Relationship="Self.FK_Employee_NationalID_serve" FromRole="Employee" ToRole="serve" />
+          <NavigationProperty Name="Evaluations" Relationship="Self.FK_Evaluation_Employee" FromRole="Employee" ToRole="Evaluation" />
+        </EntityType>
+        <EntityType Name="Evaluation">
+          <Key>
+            <PropertyRef Name="Month" />
+            <PropertyRef Name="NationalID" />
+          </Key>
+          <Property Name="Month" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TotalAmountOfMonth" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ProfitPercentage" Type="Decimal" Precision="2" Scale="1" Nullable="false" />
+          <Property Name="Bonus" Type="Decimal" Precision="25" Scale="7" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="NationalID" Type="String" MaxLength="14" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Evaluation_Employee" FromRole="Evaluation" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Package">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <NavigationProperty Name="PackageCustomers" Relationship="Self.FK__PackageCu__Packa__47DBAE45" FromRole="Package" ToRole="PackageCustomer" />
+        </EntityType>
+        <EntityType Name="PackageCustomer">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+            <PropertyRef Name="PackageId" />
+            <PropertyRef Name="NationalID" />
+          </Key>
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="PackageId" Type="Int32" Nullable="false" />
+          <Property Name="NationalID" Type="String" MaxLength="14" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Deposit" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="TakeDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK__PackageCu__Custo__46E78A0C" FromRole="PackageCustomer" ToRole="Customer" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__PackageCu__Natio__49C3F6B7" FromRole="PackageCustomer" ToRole="Employee" />
+          <NavigationProperty Name="Package" Relationship="Self.FK__PackageCu__Packa__47DBAE45" FromRole="PackageCustomer" ToRole="Package" />
+        </EntityType>
+        <EntityType Name="serve">
+          <Key>
+            <PropertyRef Name="NationalID" />
+            <PropertyRef Name="CustomerId" />
+            <PropertyRef Name="ServiceId" />
+          </Key>
+          <Property Name="NationalID" Type="String" MaxLength="14" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="ServiceId" Type="Int32" Nullable="false" />
+          <Property Name="Servedate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK__serve__CustomerI__4D94879B" FromRole="serve" ToRole="Customer" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_NationalID_serve" FromRole="serve" ToRole="Employee" />
+          <NavigationProperty Name="Service" Relationship="Self.FK__serve__ServiceId__4E88ABD4" FromRole="serve" ToRole="Service" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="serves" Relationship="Self.FK__serve__ServiceId__4E88ABD4" FromRole="Service" ToRole="serve" />
+        </EntityType>
+        <EntityType Name="V_AllCustomers">
+          <Key>
+            <PropertyRef Name="Code" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="PhoneNumber" />
+          </Key>
+          <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="V_AllEmployees">
+          <Key>
+            <PropertyRef Name="NationalID" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="PhoneNumber" />
+            <PropertyRef Name="FixedSalary" />
+            <PropertyRef Name="type" />
+          </Key>
+          <Property Name="NationalID" Type="String" MaxLength="14" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FixedSalary" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="V_AttendanceWithEmployeeName">
+          <Key>
+            <PropertyRef Name="AttendanceID" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+          </Key>
+          <Property Name="AttendanceID" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ArrivalTime" Type="DateTime" Precision="3" />
+          <Property Name="DepartureTime" Type="DateTime" Precision="3" />
+          <Property Name="ExpenseMoney" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="DailyPocketMoney" Type="Decimal" Precision="9" Scale="2" />
+        </EntityType>
+        <EntityType Name="V_CoustomerVipDetails">
+          <Key>
+            <PropertyRef Name="Customer_Name" />
+            <PropertyRef Name="Customer_Phone" />
+            <PropertyRef Name="Package_Name" />
+            <PropertyRef Name="Package_Description" />
+            <PropertyRef Name="Package_Cost" />
+            <PropertyRef Name="Customer_Deposit" />
+            <PropertyRef Name="TakeDate" />
+          </Key>
+          <Property Name="Customer_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Customer_Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Package_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Package_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Package_Cost" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Customer_Deposit" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="TakeDate" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="V_Package">
+          <Key>
+            <PropertyRef Name="PackageName" />
+            <PropertyRef Name="PackageDescription" />
+            <PropertyRef Name="PackageTotalAmount" />
+          </Key>
+          <Property Name="PackageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PackageDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PackageTotalAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="V_Service">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Cost" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cost" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Emp_Account">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="NationalID" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_NationalID">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Attendance" Type="Self.Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="NationalID" />
+            </Principal>
+            <Dependent Role="Attendance">
+              <PropertyRef Name="NationalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PackageCu__Custo__46E78A0C">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="PackageCustomer" Type="Self.PackageCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="PackageCustomer">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__serve__CustomerI__4D94879B">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="serve" Type="Self.serve" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="serve">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PackageCu__Natio__49C3F6B7">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="PackageCustomer" Type="Self.PackageCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="NationalID" />
+            </Principal>
+            <Dependent Role="PackageCustomer">
+              <PropertyRef Name="NationalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_NationalID_serve">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="serve" Type="Self.serve" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="NationalID" />
+            </Principal>
+            <Dependent Role="serve">
+              <PropertyRef Name="NationalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Evaluation_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Evaluation" Type="Self.Evaluation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="NationalID" />
+            </Principal>
+            <Dependent Role="Evaluation">
+              <PropertyRef Name="NationalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PackageCu__Packa__47DBAE45">
+          <End Role="Package" Type="Self.Package" Multiplicity="1" />
+          <End Role="PackageCustomer" Type="Self.PackageCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Package">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PackageCustomer">
+              <PropertyRef Name="PackageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__serve__ServiceId__4E88ABD4">
+          <End Role="Service" Type="Self.Service" Multiplicity="1" />
+          <End Role="serve" Type="Self.serve" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="serve">
+              <PropertyRef Name="ServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Mens_Beauty_Center_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="Self.Account" />
+          <EntitySet Name="Attendances" EntityType="Self.Attendance" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Evaluations" EntityType="Self.Evaluation" />
+          <EntitySet Name="Packages" EntityType="Self.Package" />
+          <EntitySet Name="PackageCustomers" EntityType="Self.PackageCustomer" />
+          <EntitySet Name="serves" EntityType="Self.serve" />
+          <EntitySet Name="Services" EntityType="Self.Service" />
+          <EntitySet Name="V_AllCustomers" EntityType="Self.V_AllCustomers" />
+          <EntitySet Name="V_AllEmployees" EntityType="Self.V_AllEmployees" />
+          <EntitySet Name="V_AttendanceWithEmployeeName" EntityType="Self.V_AttendanceWithEmployeeName" />
+          <EntitySet Name="V_CoustomerVipDetails" EntityType="Self.V_CoustomerVipDetails" />
+          <EntitySet Name="V_Package" EntityType="Self.V_Package" />
+          <EntitySet Name="V_Service" EntityType="Self.V_Service" />
+          <AssociationSet Name="FK_Emp_Account" Association="Self.FK_Emp_Account">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_NationalID" Association="Self.FK_Employee_NationalID">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Attendance" EntitySet="Attendances" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PackageCu__Custo__46E78A0C" Association="Self.FK__PackageCu__Custo__46E78A0C">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="PackageCustomer" EntitySet="PackageCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__serve__CustomerI__4D94879B" Association="Self.FK__serve__CustomerI__4D94879B">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="serve" EntitySet="serves" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PackageCu__Natio__49C3F6B7" Association="Self.FK__PackageCu__Natio__49C3F6B7">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="PackageCustomer" EntitySet="PackageCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_NationalID_serve" Association="Self.FK_Employee_NationalID_serve">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="serve" EntitySet="serves" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Evaluation_Employee" Association="Self.FK_Evaluation_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Evaluation" EntitySet="Evaluations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PackageCu__Packa__47DBAE45" Association="Self.FK__PackageCu__Packa__47DBAE45">
+            <End Role="Package" EntitySet="Packages" />
+            <End Role="PackageCustomer" EntitySet="PackageCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__serve__ServiceId__4E88ABD4" Association="Self.FK__serve__ServiceId__4E88ABD4">
+            <End Role="Service" EntitySet="Services" />
+            <End Role="serve" EntitySet="serves" />
+          </AssociationSet>
+          <FunctionImport Name="SP_AddCustomer">
+            <Parameter Name="C_Name" Mode="In" Type="String" />
+            <Parameter Name="C_Phone" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_AddEmployee">
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="NationalID" Mode="In" Type="String" />
+            <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+            <Parameter Name="FixedSalary" Mode="In" Type="Decimal" />
+            <Parameter Name="Type" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="SP_AddEmployeeServesCustomer">
+            <Parameter Name="p_NationalID" Mode="In" Type="String" />
+            <Parameter Name="p_CustomerCode" Mode="In" Type="Int32" />
+            <Parameter Name="p_ServiceID" Mode="In" Type="Int32" />
+            <Parameter Name="P_ServDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_AddPackage">
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="TotalAmount" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_AddService">
+            <Parameter Name="ServiceName" Mode="In" Type="String" />
+            <Parameter Name="Price" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CreateManagerAccount">
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="UserPassword" Mode="In" Type="String" />
+            <Parameter Name="EmployeeID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DeleteManagerAccount">
+            <Parameter Name="UserName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DeletePackage" ReturnType="Collection(String)">
+            <Parameter Name="PackageId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DeleteService">
+            <Parameter Name="ServiceID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_EmployeeReport" ReturnType="Collection(Mens_Beauty_Center_DBModel.SP_EmployeeReport_Result)">
+            <Parameter Name="EmployeeID" Mode="In" Type="Int32" />
+            <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+            <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GetCustomerByPhoneNumber" ReturnType="Collection(Mens_Beauty_Center_DBModel.SP_GetCustomerByPhoneNumber_Result)">
+            <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GetCustomerPackagesByPhoneNumber" ReturnType="Collection(Mens_Beauty_Center_DBModel.SP_GetCustomerPackagesByPhoneNumber_Result)">
+            <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GetCustomerServicesByPhoneNumber" ReturnType="Collection(Mens_Beauty_Center_DBModel.SP_GetCustomerServicesByPhoneNumber_Result)">
+            <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_InsertArrivalTime">
+            <Parameter Name="EmpID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_InsertEmployeeEvaluationWithPackages">
+            <Parameter Name="Month" Mode="In" Type="String" />
+            <Parameter Name="ProfitPercentage" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UpdateEmployeeInfo">
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="NationalID" Mode="In" Type="String" />
+            <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+            <Parameter Name="Type" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UpdateEmployeeSalary">
+            <Parameter Name="NationalID" Mode="In" Type="String" />
+            <Parameter Name="FixedSalary" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UpdateExpenseMoney" ReturnType="Collection(String)">
+            <Parameter Name="AttendanceID" Mode="In" Type="Int32" />
+            <Parameter Name="ExpenseMoney" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UpdateLeavingTime">
+            <Parameter Name="AttendanceID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UpdatePackage" ReturnType="Collection(String)">
+            <Parameter Name="PackageId" Mode="In" Type="Int32" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="TotalAmount" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UpdateService">
+            <Parameter Name="ServiceId" Mode="In" Type="Int32" />
+            <Parameter Name="ServiceName" Mode="In" Type="String" />
+            <Parameter Name="Price" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="SP_EmployeeReport_Result">
+          <Property Type="String" Name="EmployeeName" Nullable="false" MaxLength="101" />
+          <Property Type="Int32" Name="CustomerCount" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_GetCustomerByPhoneNumber_Result">
+          <Property Type="Int32" Name="Code" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PhoneNumber" Nullable="false" MaxLength="11" />
+        </ComplexType>
+        <ComplexType Name="SP_GetCustomerPackagesByPhoneNumber_Result">
+          <Property Type="String" Name="PackageName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="TakeDate" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SP_GetCustomerServicesByPhoneNumber_Result">
+          <Property Type="String" Name="ServiceName" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Price" Nullable="false" />
+          <Property Type="DateTime" Name="Servedate" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Mens_Beauty_Center_DBModelStoreContainer" CdmEntityContainer="Mens_Beauty_Center_DBEntities">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Attendances">
+            <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.Attendance">
+              <MappingFragment StoreEntitySet="Attendance">
+                <ScalarProperty Name="AttendanceID" ColumnName="AttendanceID" />
+                <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+                <ScalarProperty Name="ExpenseMoney" ColumnName="ExpenseMoney" />
+                <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+                <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+                <ScalarProperty Name="DailyPocketMoney" ColumnName="DailyPocketMoney" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="FixedSalary" ColumnName="FixedSalary" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Evaluations">
+            <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.Evaluation">
+              <MappingFragment StoreEntitySet="Evaluation">
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="TotalAmountOfMonth" ColumnName="TotalAmountOfMonth" />
+                <ScalarProperty Name="ProfitPercentage" ColumnName="ProfitPercentage" />
+                <ScalarProperty Name="Bonus" ColumnName="Bonus" />
+                <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Packages">
+            <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.Package">
+              <MappingFragment StoreEntitySet="Package">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PackageCustomers">
+            <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.PackageCustomer">
+              <MappingFragment StoreEntitySet="PackageCustomer">
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+                <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+                <ScalarProperty Name="Deposit" ColumnName="Deposit" />
+                <ScalarProperty Name="TakeDate" ColumnName="TakeDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="serves">
+            <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.serve">
+              <MappingFragment StoreEntitySet="serve">
+                <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+                <ScalarProperty Name="Servedate" ColumnName="Servedate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_AllCustomers">
+            <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.V_AllCustomers">
+              <MappingFragment StoreEntitySet="V_AllCustomers">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_AllEmployees">
+            <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.V_AllEmployees">
+              <MappingFragment StoreEntitySet="V_AllEmployees">
+                <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="FixedSalary" ColumnName="FixedSalary" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_AttendanceWithEmployeeName">
+            <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.V_AttendanceWithEmployeeName">
+              <MappingFragment StoreEntitySet="V_AttendanceWithEmployeeName">
+                <ScalarProperty Name="AttendanceID" ColumnName="AttendanceID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+                <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+                <ScalarProperty Name="ExpenseMoney" ColumnName="ExpenseMoney" />
+                <ScalarProperty Name="DailyPocketMoney" ColumnName="DailyPocketMoney" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_CoustomerVipDetails">
+            <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.V_CoustomerVipDetails">
+              <MappingFragment StoreEntitySet="V_CoustomerVipDetails">
+                <ScalarProperty Name="Customer_Name" ColumnName="Customer Name" />
+                <ScalarProperty Name="Customer_Phone" ColumnName="Customer Phone" />
+                <ScalarProperty Name="Package_Name" ColumnName="Package Name" />
+                <ScalarProperty Name="Package_Description" ColumnName="Package Description" />
+                <ScalarProperty Name="Package_Cost" ColumnName="Package Cost" />
+                <ScalarProperty Name="Customer_Deposit" ColumnName="Customer Deposit" />
+                <ScalarProperty Name="TakeDate" ColumnName="TakeDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_Package">
+            <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.V_Package">
+              <MappingFragment StoreEntitySet="V_Package">
+                <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+                <ScalarProperty Name="PackageDescription" ColumnName="PackageDescription" />
+                <ScalarProperty Name="PackageTotalAmount" ColumnName="PackageTotalAmount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_Service">
+            <EntityTypeMapping TypeName="Mens_Beauty_Center_DBModel.V_Service">
+              <MappingFragment StoreEntitySet="V_Service">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_AddCustomer" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_AddCustomer" />
+          <FunctionImportMapping FunctionImportName="SP_AddEmployee" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_AddEmployee" />
+          <FunctionImportMapping FunctionImportName="SP_AddEmployeeServesCustomer" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_AddEmployeeServesCustomer" />
+          <FunctionImportMapping FunctionImportName="SP_AddPackage" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_AddPackage" />
+          <FunctionImportMapping FunctionImportName="SP_AddService" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_AddService" />
+          <FunctionImportMapping FunctionImportName="SP_CreateManagerAccount" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_CreateManagerAccount" />
+          <FunctionImportMapping FunctionImportName="SP_DeleteManagerAccount" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_DeleteManagerAccount" />
+          <FunctionImportMapping FunctionImportName="SP_DeletePackage" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_DeletePackage" />
+          <FunctionImportMapping FunctionImportName="SP_DeleteService" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_DeleteService" />
+          <FunctionImportMapping FunctionImportName="SP_EmployeeReport" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_EmployeeReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Mens_Beauty_Center_DBModel.SP_EmployeeReport_Result">
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="CustomerCount" ColumnName="CustomerCount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GetCustomerByPhoneNumber" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_GetCustomerByPhoneNumber">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Mens_Beauty_Center_DBModel.SP_GetCustomerByPhoneNumber_Result">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GetCustomerPackagesByPhoneNumber" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_GetCustomerPackagesByPhoneNumber">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Mens_Beauty_Center_DBModel.SP_GetCustomerPackagesByPhoneNumber_Result">
+                <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="TakeDate" ColumnName="TakeDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GetCustomerServicesByPhoneNumber" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_GetCustomerServicesByPhoneNumber">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Mens_Beauty_Center_DBModel.SP_GetCustomerServicesByPhoneNumber_Result">
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Servedate" ColumnName="Servedate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_InsertArrivalTime" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_InsertArrivalTime" />
+          <FunctionImportMapping FunctionImportName="SP_InsertEmployeeEvaluationWithPackages" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_InsertEmployeeEvaluationWithPackages" />
+          <FunctionImportMapping FunctionImportName="SP_UpdateEmployeeInfo" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_UpdateEmployeeInfo" />
+          <FunctionImportMapping FunctionImportName="SP_UpdateEmployeeSalary" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_UpdateEmployeeSalary" />
+          <FunctionImportMapping FunctionImportName="SP_UpdateExpenseMoney" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_UpdateExpenseMoney" />
+          <FunctionImportMapping FunctionImportName="SP_UpdateLeavingTime" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_UpdateLeavingTime" />
+          <FunctionImportMapping FunctionImportName="SP_UpdatePackage" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_UpdatePackage" />
+          <FunctionImportMapping FunctionImportName="SP_UpdateService" FunctionName="Mens_Beauty_Center_DBModel.Store.SP_UpdateService" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
