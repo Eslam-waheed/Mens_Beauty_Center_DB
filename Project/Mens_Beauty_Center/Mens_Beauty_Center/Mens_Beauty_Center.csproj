@@ -67,6 +67,12 @@
     <Compile Include="Attendance.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Attendane_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Attendane_frm.Designer.cs">
+      <DependentUpon>Attendane_frm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Categories.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </Compile>
     <EmbeddedResource Include="AllCustomers_frm.resx">
       <DependentUpon>AllCustomers_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Attendane_frm.resx">
+      <DependentUpon>Attendane_frm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Categories.resx">
       <DependentUpon>Categories.cs</DependentUpon>

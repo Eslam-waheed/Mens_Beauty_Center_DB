@@ -246,7 +246,7 @@ namespace Mens_Beauty_Center
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_InsertEmployeeEvaluationWithPackages", monthParameter, profitPercentageParameter);
         }
     
-        public virtual int SP_UpdateEmployeeInfo(string firstName, string lastName, string nationalID, string phoneNumber, Nullable<bool> type)
+        public virtual int SP_UpdateEmployeeInfo(string firstName, string lastName, string nationalID, string phoneNumber, Nullable<decimal> fixedSalary, Nullable<bool> type)
         {
             var firstNameParameter = firstName != null ?
                 new ObjectParameter("FirstName", firstName) :
@@ -264,11 +264,15 @@ namespace Mens_Beauty_Center
                 new ObjectParameter("PhoneNumber", phoneNumber) :
                 new ObjectParameter("PhoneNumber", typeof(string));
     
+            var fixedSalaryParameter = fixedSalary.HasValue ?
+                new ObjectParameter("FixedSalary", fixedSalary) :
+                new ObjectParameter("FixedSalary", typeof(decimal));
+    
             var typeParameter = type.HasValue ?
                 new ObjectParameter("Type", type) :
                 new ObjectParameter("Type", typeof(bool));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_UpdateEmployeeInfo", firstNameParameter, lastNameParameter, nationalIDParameter, phoneNumberParameter, typeParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_UpdateEmployeeInfo", firstNameParameter, lastNameParameter, nationalIDParameter, phoneNumberParameter, fixedSalaryParameter, typeParameter);
         }
     
         public virtual int SP_UpdateEmployeeSalary(string nationalID, Nullable<decimal> fixedSalary)

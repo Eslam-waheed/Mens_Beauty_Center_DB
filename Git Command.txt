@@ -1,0 +1,6 @@
+// to add your update
+git add FromName.cs FromName.Designer.cs FromName.resx
+git commit -m "message"
+git push origin main
+// to pull update 
+git pull origin

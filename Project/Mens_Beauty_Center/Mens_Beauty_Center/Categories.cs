@@ -46,5 +46,11 @@ namespace Mens_Beauty_Center
             if (result == DialogResult.No)
                 e.Cancel = true;
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Attendane_frm attend = new Attendane_frm();
+            attend.Show();
+        }
     }
 }
