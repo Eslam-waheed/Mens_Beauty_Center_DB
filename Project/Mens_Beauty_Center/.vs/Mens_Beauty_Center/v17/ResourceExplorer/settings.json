@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"CustomColumnOrderings":{"name":0,"file-path":1,"file-name":2,"neutral-value":3,"neutral-comment":4,"type":5},"ShowValidationErrors":true,"SelectedResourceGroups":["C:\\Users\\moham\\OneDrive\\Desktop\\iti\\C#Project\\Mens_Beauty_Center_DB\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Categories.resx"],"VisibleColumnKeys":["name","neutral-value"]}
+=======
+{"CustomColumnOrderings":{"name":0,"file-path":1,"file-name":2,"neutral-value":3,"neutral-comment":4,"type":5},"ShowValidationErrors":true,"SelectedResourceGroups":[],"VisibleColumnKeys":["name","neutral-value"]}
+>>>>>>> df241c02bf75023a471056cc18ad2a729439c6ff

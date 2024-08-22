@@ -68,10 +68,18 @@
             this.ClientSize = new System.Drawing.Size(1002, 523);
             this.Controls.Add(this.AttendanceDGView);
             this.Controls.Add(this.lblAttendance);
+<<<<<<< HEAD
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "Attendane_frm";
             this.Text = "Attendane_frm";
+=======
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.Name = "Attendane_frm";
+            this.Text = "Attendane";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+>>>>>>> df241c02bf75023a471056cc18ad2a729439c6ff
             ((System.ComponentModel.ISupportInitialize)(this.AttendanceDGView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

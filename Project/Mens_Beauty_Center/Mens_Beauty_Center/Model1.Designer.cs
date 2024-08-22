@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\Model1.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\moham\OneDrive\Desktop\iti\cloneC#\Mens_Beauty_Center_Project\Project\Mens_Beauty_Center\Mens_Beauty_Center\Model1.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

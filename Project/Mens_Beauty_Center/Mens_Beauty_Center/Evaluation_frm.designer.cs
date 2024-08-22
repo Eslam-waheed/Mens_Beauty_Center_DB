@@ -40,6 +40,10 @@ namespace Mens_Beauty_Center
             this.cb_emp = new System.Windows.Forms.ComboBox();
             this.btn_save = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+<<<<<<< HEAD
+=======
+            this.btn_enable = new System.Windows.Forms.Button();
+>>>>>>> df241c02bf75023a471056cc18ad2a729439c6ff
             this.label6 = new System.Windows.Forms.Label();
             this.btn_enable = new System.Windows.Forms.Button();
             this.cb_month = new System.Windows.Forms.ComboBox();
@@ -61,41 +65,74 @@ namespace Mens_Beauty_Center
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             this.btn_add.MouseEnter += new System.EventHandler(this.btn_add_MouseEnter);
             this.btn_add.MouseLeave += new System.EventHandler(this.btn_add_MouseLeave);
+<<<<<<< HEAD
+=======
+            // 
+            // txt_month
+            // 
+            this.txt_month.Enabled = false;
+            this.txt_month.Location = new System.Drawing.Point(62, 138);
+            this.txt_month.Name = "txt_month";
+            this.txt_month.Size = new System.Drawing.Size(175, 20);
+            this.txt_month.TabIndex = 3;
+>>>>>>> df241c02bf75023a471056cc18ad2a729439c6ff
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+<<<<<<< HEAD
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(304, 167);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 19);
+=======
+            this.label1.Location = new System.Drawing.Point(336, 141);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 13);
+>>>>>>> df241c02bf75023a471056cc18ad2a729439c6ff
             this.label1.TabIndex = 4;
             this.label1.Text = "الشهر";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+<<<<<<< HEAD
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(267, 221);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 19);
+=======
+            this.label2.Location = new System.Drawing.Point(299, 195);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 13);
+>>>>>>> df241c02bf75023a471056cc18ad2a729439c6ff
             this.label2.TabIndex = 6;
             this.label2.Text = "إجمالي الشهر";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+<<<<<<< HEAD
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(301, 279);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 19);
+=======
+            this.label3.Location = new System.Drawing.Point(333, 253);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 13);
+>>>>>>> df241c02bf75023a471056cc18ad2a729439c6ff
             this.label3.TabIndex = 8;
             this.label3.Text = "النسبة";
             // 
             // txt_percent
             // 
             this.txt_percent.Enabled = false;
+<<<<<<< HEAD
             this.txt_percent.Location = new System.Drawing.Point(62, 278);
+=======
+            this.txt_percent.Location = new System.Drawing.Point(62, 250);
+>>>>>>> df241c02bf75023a471056cc18ad2a729439c6ff
             this.txt_percent.Name = "txt_percent";
             this.txt_percent.Size = new System.Drawing.Size(175, 20);
             this.txt_percent.TabIndex = 7;
@@ -103,7 +140,11 @@ namespace Mens_Beauty_Center
             // txt_total
             // 
             this.txt_total.Enabled = false;
+<<<<<<< HEAD
             this.txt_total.Location = new System.Drawing.Point(62, 220);
+=======
+            this.txt_total.Location = new System.Drawing.Point(62, 192);
+>>>>>>> df241c02bf75023a471056cc18ad2a729439c6ff
             this.txt_total.Name = "txt_total";
             this.txt_total.Size = new System.Drawing.Size(175, 20);
             this.txt_total.TabIndex = 5;
@@ -111,10 +152,16 @@ namespace Mens_Beauty_Center
             // label5
             // 
             this.label5.AutoSize = true;
+<<<<<<< HEAD
             this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(304, 343);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 19);
+=======
+            this.label5.Location = new System.Drawing.Point(336, 317);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 13);
+>>>>>>> df241c02bf75023a471056cc18ad2a729439c6ff
             this.label5.TabIndex = 11;
             this.label5.Text = "العامل";
             // 
@@ -123,7 +170,11 @@ namespace Mens_Beauty_Center
             this.cb_emp.DisplayMember = "NationalID";
             this.cb_emp.Enabled = false;
             this.cb_emp.FormattingEnabled = true;
+<<<<<<< HEAD
             this.cb_emp.Location = new System.Drawing.Point(62, 342);
+=======
+            this.cb_emp.Location = new System.Drawing.Point(62, 314);
+>>>>>>> df241c02bf75023a471056cc18ad2a729439c6ff
             this.cb_emp.Name = "cb_emp";
             this.cb_emp.Size = new System.Drawing.Size(175, 21);
             this.cb_emp.TabIndex = 12;
@@ -154,6 +205,7 @@ namespace Mens_Beauty_Center
             this.dataGridView1.TabIndex = 17;
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+<<<<<<< HEAD
             // 
             // label6
             // 
@@ -164,6 +216,8 @@ namespace Mens_Beauty_Center
             this.label6.Size = new System.Drawing.Size(153, 23);
             this.label6.TabIndex = 21;
             this.label6.Text = "الحوافز الشهرية";
+=======
+>>>>>>> df241c02bf75023a471056cc18ad2a729439c6ff
             // 
             // btn_enable
             // 
@@ -171,6 +225,7 @@ namespace Mens_Beauty_Center
             this.btn_enable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_enable.Location = new System.Drawing.Point(62, 54);
             this.btn_enable.Name = "btn_enable";
+<<<<<<< HEAD
             this.btn_enable.Size = new System.Drawing.Size(49, 37);
             this.btn_enable.TabIndex = 22;
             this.btn_enable.UseVisualStyleBackColor = true;
@@ -184,13 +239,33 @@ namespace Mens_Beauty_Center
             this.cb_month.Name = "cb_month";
             this.cb_month.Size = new System.Drawing.Size(175, 21);
             this.cb_month.TabIndex = 23;
+=======
+            this.btn_enable.Size = new System.Drawing.Size(47, 38);
+            this.btn_enable.TabIndex = 18;
+            this.btn_enable.UseVisualStyleBackColor = true;
+            this.btn_enable.Click += new System.EventHandler(this.btn_enable_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(466, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(153, 23);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "الحوافز الشهرية";
+>>>>>>> df241c02bf75023a471056cc18ad2a729439c6ff
             // 
             // Evaluation_frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1043, 573);
+<<<<<<< HEAD
             this.Controls.Add(this.cb_month);
+=======
+            this.Controls.Add(this.label6);
+>>>>>>> df241c02bf75023a471056cc18ad2a729439c6ff
             this.Controls.Add(this.btn_enable);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView1);
@@ -225,6 +300,10 @@ namespace Mens_Beauty_Center
         private System.Windows.Forms.ComboBox cb_emp;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.DataGridView dataGridView1;
+<<<<<<< HEAD
+=======
+        private System.Windows.Forms.Button btn_enable;
+>>>>>>> df241c02bf75023a471056cc18ad2a729439c6ff
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_enable;
         private System.Windows.Forms.ComboBox cb_month;
