@@ -19,6 +19,7 @@ namespace Mens_Beauty_Center
         {
             InitializeComponent();
         }
+
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show("هل انت متاكد من اغلاق الصفحة", "Closing", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
@@ -41,8 +42,6 @@ namespace Mens_Beauty_Center
                          FirstName = empp.FirstName
                      };
 
-            
-
             // تعيين البيانات إلى DataGridView
             dataGridView1.DataSource = q2.ToList();
 
@@ -54,9 +53,10 @@ namespace Mens_Beauty_Center
             dataGridView1.Columns["Bonus"].HeaderText = "الإضافي";
             dataGridView1.Columns["FirstName"].HeaderText = "اسم العامل";
         }
+
         private void enable_txts()
         {
-            txt_month.Enabled = true;
+            cb_month.Enabled = true;
             txt_percent.Enabled = true;
             txt_total.Enabled = true;
             cb_emp.Enabled = true;
@@ -64,7 +64,7 @@ namespace Mens_Beauty_Center
 
         private void clear_txts()
         {
-            txt_month.Text = "";
+            cb_month.SelectedIndex = 0;
             txt_percent.Text = "";
             txt_total.Text = "";
             cb_emp.SelectedIndex = 0;
@@ -72,16 +72,21 @@ namespace Mens_Beauty_Center
 
         private void btn_add_Click(object sender, EventArgs e)
         {
+            if (decimal.Parse(txt_percent.Text) > 10)
+            {
+                MessageBox.Show("النسبة المدخلة لا يمكن أن تكون أكثر من 10%", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             // إنشاء كائن جديد من Evaluation
             ev = new Evaluation
             {
-                Month = txt_month.Text,
+                Month = cb_month.SelectedItem.ToString(),
                 TotalAmountOfMonth = decimal.Parse(txt_total.Text),
                 ProfitPercentage = decimal.Parse(txt_percent.Text),
                 NationalID = cb_emp.SelectedValue.ToString()
             };
 
-            // إضافة التقييم الجديد إلى السياق وحفظ التغييرات
+            // إضافة التقييم الجديد إلى قاعدة البيانات وحفظ التغييرات
             my_context.Evaluations.Add(ev);
             my_context.SaveChanges();
 
@@ -89,7 +94,7 @@ namespace Mens_Beauty_Center
 
             // تفريغ الحقول بعد الإضافة
             clear_txts();
-            // Refresh DataGridView to reflect the newly added data
+            // تحديث بيانات DataGridView
             fillDGV();
         }
 
@@ -106,19 +111,22 @@ namespace Mens_Beauty_Center
         private void Evaluation_frm_Load(object sender, EventArgs e)
         {
             fillDGV();
-            //=======================//
-            // تعبئة ComboBox بأسماء العاملين
+
+            // تعبئة ComboBox بأسماء الأشهر باللغة العربية
+            cb_month.Items.AddRange(new string[]
+            {
+                "يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو",
+                "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"
+            });
+
+            // تعيين أول عنصر كقيمة افتراضية
+            cb_month.SelectedIndex = 0;
+
+            // تعبئة ComboBox الخاصة بالعاملين
             var employees = my_context.Employees.ToList();
             cb_emp.DataSource = employees;
-            cb_emp.DisplayMember = "FirstName"; // عرض اسم العامل
-            cb_emp.ValueMember = "NationalID"; // استخدام رقم العامل كقيمة
-        }
-
-        private void btn_enable_Click(object sender, EventArgs e)
-        {
-            enable_txts();
-            clear_txts();
-            btn_add.Enabled = true;
+            cb_emp.DisplayMember = "FirstName";
+            cb_emp.ValueMember = "NationalID";
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -133,7 +141,7 @@ namespace Mens_Beauty_Center
                 string nationalID = dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
 
                 // تعبئة الحقول بناءً على القيم المستخرجة
-                txt_month.Text = month;
+                cb_month.SelectedItem = month;
                 txt_total.Text = totalAmount;
                 txt_percent.Text = profitPercentage;
                 // تعيين العامل المناسب في ComboBox باستخدام NationalID
@@ -145,6 +153,11 @@ namespace Mens_Beauty_Center
         {
             if (dataGridView1.CurrentRow != null)
             {
+                if (decimal.Parse(txt_percent.Text) > 10)
+                {
+                    MessageBox.Show("النسبة المدخلة لا يمكن أن تكون أكثر من 10%", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 // الحصول على NationalID من الصف المحدد
                 string nationalID = dataGridView1.CurrentRow.Cells["ID"].Value.ToString();
                 string month = dataGridView1.CurrentRow.Cells["Month"].Value.ToString();
@@ -157,7 +170,7 @@ namespace Mens_Beauty_Center
                     // تحديث القيم بالبيانات الجديدة من الحقول النصية
                     evaluation.TotalAmountOfMonth = decimal.Parse(txt_total.Text);
                     evaluation.ProfitPercentage = decimal.Parse(txt_percent.Text);
-                    evaluation.Month = txt_month.Text;
+                    evaluation.Month = cb_month.SelectedItem.ToString();
                     evaluation.NationalID = cb_emp.SelectedValue.ToString(); // القيمة المختارة من ComboBox
 
                     // حفظ التغييرات في قاعدة البيانات
@@ -179,8 +192,16 @@ namespace Mens_Beauty_Center
         private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             enable_txts();
+            cb_month.Enabled = false;
             cb_emp.Enabled = false;
             btn_save.Enabled = true;
+        }
+
+        private void btn_enable_Click(object sender, EventArgs e)
+        {
+            enable_txts();
+            clear_txts();
+            btn_add.Enabled = true;
         }
     }
 }
