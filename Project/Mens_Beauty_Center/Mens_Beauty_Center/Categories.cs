@@ -31,8 +31,8 @@ namespace Mens_Beauty_Center
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            AllCustomers_frm customers = new AllCustomers_frm();
-            customers.Show();
+            //AllCustomers_frm customers = new AllCustomers_frm();
+            //customers.Show();
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)

@@ -1,42 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\",
+  "WorkspaceRootPath": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\v1r1\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|c:\\users\\moham\\onedrive\\desktop\\iti\\testing\\project\\mens_beauty_center_project\\project\\mens_beauty_center\\mens_beauty_center\\employeeshow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|solutionrelative:mens_beauty_center\\employeeshow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\mens_beauty_center\\attendane_frm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|solutionrelative:mens_beauty_center\\attendane_frm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\mens_beauty_center\\attendane_frm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|solutionrelative:mens_beauty_center\\attendane_frm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\mens_beauty_center\\employeeshow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|solutionrelative:mens_beauty_center\\employeeshow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\mens_beauty_center\\employeeshow.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|solutionrelative:mens_beauty_center\\employeeshow.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\mens_beauty_center\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|C:\\Users\\moham\\OneDrive\\Desktop\\iti\\v1r1\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\mens_beauty_center\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|solutionrelative:mens_beauty_center\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\mens_beauty_center\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|solutionrelative:mens_beauty_center\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\mens_beauty_center\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|solutionrelative:mens_beauty_center\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\mens_beauty_center\\categories.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAF6679D-0AA9-4380-9032-F36A41D1257E}|Mens_Beauty_Center\\Mens_Beauty_Center.csproj|solutionrelative:mens_beauty_center\\categories.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,110 +22,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Attendane_frm.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Attendane_frm.cs",
-              "RelativeDocumentMoniker": "Mens_Beauty_Center\\Attendane_frm.cs",
-              "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Attendane_frm.cs",
-              "RelativeToolTip": "Mens_Beauty_Center\\Attendane_frm.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T09:24:08.757Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Attendane_frm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Attendane_frm.cs",
-              "RelativeDocumentMoniker": "Mens_Beauty_Center\\Attendane_frm.cs",
-              "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\cloneC#\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Attendane_frm.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\cloneC#\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Attendane_frm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T09:20:37.921Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "EmployeeShow.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\EmployeeShow.cs",
-              "RelativeDocumentMoniker": "Mens_Beauty_Center\\EmployeeShow.cs",
-              "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\EmployeeShow.cs [Design]",
-              "RelativeToolTip": "Mens_Beauty_Center\\EmployeeShow.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T09:20:04.803Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EmployeeShow.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\EmployeeShow.Designer.cs",
-              "RelativeDocumentMoniker": "Mens_Beauty_Center\\EmployeeShow.Designer.cs",
-              "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\EmployeeShow.Designer.cs",
-              "RelativeToolTip": "Mens_Beauty_Center\\EmployeeShow.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T09:20:02.214Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EmployeeShow.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\EmployeeShow.cs",
-              "RelativeDocumentMoniker": "Mens_Beauty_Center\\EmployeeShow.cs",
-              "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\EmployeeShow.cs",
-              "RelativeToolTip": "Mens_Beauty_Center\\EmployeeShow.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAQwB4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T09:19:59.494Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "Categories.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Categories.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\v1r1\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Categories.cs",
               "RelativeDocumentMoniker": "Mens_Beauty_Center\\Categories.cs",
-              "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Categories.cs",
-              "RelativeToolTip": "Mens_Beauty_Center\\Categories.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAgwDMAAAAUAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\v1r1\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Categories.cs*",
+              "RelativeToolTip": "Mens_Beauty_Center\\Categories.cs*",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwCIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T09:19:01.515Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Program.cs",
-              "RelativeDocumentMoniker": "Mens_Beauty_Center\\Program.cs",
-              "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Program.cs",
-              "RelativeToolTip": "Mens_Beauty_Center\\Program.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T09:18:47.757Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Categories.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Categories.cs",
-              "RelativeDocumentMoniker": "Mens_Beauty_Center\\Categories.cs",
-              "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\cloneC#\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Categories.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\cloneC#\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Categories.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T09:18:44.598Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Categories.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Categories.Designer.cs",
-              "RelativeDocumentMoniker": "Mens_Beauty_Center\\Categories.Designer.cs",
-              "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\iti\\Testing\\Project\\Mens_Beauty_Center_Project\\Project\\Mens_Beauty_Center\\Mens_Beauty_Center\\Categories.Designer.cs",
-              "RelativeToolTip": "Mens_Beauty_Center\\Categories.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T09:18:29.761Z"
+              "WhenOpened": "2024-08-22T09:19:01.515Z",
+              "EditorCaption": ""
             }
           ]
         }
