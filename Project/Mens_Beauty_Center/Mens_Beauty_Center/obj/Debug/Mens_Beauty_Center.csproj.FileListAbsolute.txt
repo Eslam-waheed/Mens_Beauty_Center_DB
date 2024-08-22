@@ -39,11 +39,6 @@ C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens
 C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.exe
 C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.pdb
 <<<<<<< HEAD
-C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\EntityFramework.dll
-C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\EntityFramework.xml
-C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\moham\OneDrive\Desktop\iti\C#Project\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Bea.6EE0052A.Up2Date
 E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\Mens_Beauty_Center.exe.config
 E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\Mens_Beauty_Center.exe
 E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\bin\Debug\Mens_Beauty_Center.pdb
@@ -83,3 +78,4 @@ C:\Users\moham\OneDrive\Desktop\iti\TestClone\Mens_Beauty_Center_Project\Project
 C:\Users\moham\OneDrive\Desktop\iti\TestClone\Mens_Beauty_Center_Project\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.pdb
 C:\Users\moham\OneDrive\Desktop\iti\TestClone\Mens_Beauty_Center_Project\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.Attendane_frm.resources
 >>>>>>> c726f0d6db339a09d78e7babb2a0c35b9a177f37
+E:\برمجة\ITI\Backend\C# Advanced\Project\C#Proj\Mens_Beauty_Center_DB\Project\Mens_Beauty_Center\Mens_Beauty_Center\obj\Debug\Mens_Beauty_Center.Attendane_frm.resources

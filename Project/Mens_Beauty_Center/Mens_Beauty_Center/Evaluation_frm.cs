@@ -41,17 +41,7 @@ namespace Mens_Beauty_Center
                          FirstName = empp.FirstName
                      };
 
-            var query = from ev in my_context.Evaluations
-                        join emp in my_context.Employees on ev.NationalID equals emp.NationalID
-                        select new
-                        {
-                            ID = ev.NationalID,
-                            Month = ev.Month,
-                            TotalAmountOfMonth = ev.TotalAmountOfMonth,
-                            ProfitPercentage = ev.ProfitPercentage,
-                            Bonus = ev.Bonus,
-                            FirstName = emp.FirstName
-                        };
+            
 
             // تعيين البيانات إلى DataGridView
             dataGridView1.DataSource = q2.ToList();
